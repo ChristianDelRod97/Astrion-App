@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC - Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/SCC-Style/resultados.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel="icon" href="./style/sources/olaColor.png">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'><link rel="stylesheet" href="./style/menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+
+
+    <div id="tooltip" class="tooltip">
+      <div id="tooltip-content"></div>
+    </div>
+    <nav class="sidebar close">
+  <header>
+    <div class="image-text">
+      <span class="image">
+        <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="">
+      </span>
+      <div class="text logo-text">
+        <span class="name">
+            <img src="./style/sources/logo2.png" alt="" class="logo-img-small" width="100%" height="100%" >
+        </span>
+        <span class="profession">SSC</span>
+      </div>
+    </div>
+
+    <i class='bx bx-chevron-right toggle'></i>
+  </header>
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        
+        <li class="nav-link" id="quasarLink">
+          <a href="QUASAR.html">
+            <i class='bx bx-pie-chart-alt icon'></i>
+            <span class="text nav-text">QUASAR</span>
+          </a>
+        </li>
+         <li>
+          <a href="Inicio.html">
+            <i class='bx bx-bar-chart-alt-2 icon'></i>
+            <span class="text nav-text">SCC</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="home">
+  <div class="text"><img src="./style/sources/logo2.png" alt="Logo" width="300px"></div>
+</section>
+
+    <div class="container">
+        <div class="logo-container export-pdf">
+            <img src="./style/sources/olaColor.png" alt="Smart Capacity Calculator" class="logo-img" background="black">
+        </div>
+
+        <div class="header">
+            <h1 class="title">Calculation Results</h1>
+        </div>
+        
+        <div class="content">
+            <div class="visual-container">
+                <div class="chart-container">
+                    <canvas id="grafica"></canvas>
+                </div>
+                
+                <div class="new-tables-container">
+                    <div class="new-table-title">Data Summary</div>
+                    <table class="results-table">
+                        <tbody>
+                            <tr>
+                                <td>Minutes per daily model change</td>
+                                <td id="ResultadoModelo">-</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td id="ResultadoPerformance">-</td>
+                            </tr>
+                            <tr>
+                                <td>Productividad</td>
+                                <td id="ResultadoProductividad">-</td>
+                            </tr>
+                            <tr>
+                                <td>NPI Minutes Per Day</td>
+                                <td id="ResultadoNPI">-</td>
+                            </tr>
+                            <tr>
+                                <td>YIELD</td>
+                                <td id="ResultadoYield">-</td>
+                            </tr>
+                            <tr>
+                                <td>OEE</td>
+                                <td id="ResultadoOEE">-</td>
+                            </tr>
+                            <tr>
+                                <td>Required Machines</td>
+                                <td id="ResultadoMaquinas">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="new-tables-container">
+    <div class="new-table-title">Top 10 Most Used Models per Month</div>
+    <div class="table-container">
+        
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Model</th>
+                    <th>Utilization</th>
+                </tr>
+            </thead>
+            <tbody id="top10TableBody">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="generarPDF">
+                    <i class="fas fa-download"></i> Download Report 
+                </button>
+                <button class="btn" id="regresarBtn" 
+                onmouseover = " (event)"
+                onmouseout="hideTooltip2()"
+                class = "btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Home
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Smart Capacity Calculator &copy; 2025</p>
+        </div>
+    </div>
+    <script  src="./script/menu.js"></script>
+    <script src="./script/db.js"></script>
+    <script src="./script/resultados.js"></script>
+</body>
+</html>

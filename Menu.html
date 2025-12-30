@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="icon" href="./style/sources/olaColor.png">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:200'><link rel="stylesheet" href="./style/style.css">
+
+</head>
+<!-- Funcion para navegar entre aplicaciones -->
+<script>
+  function redirigir(url){
+    const elemento = event.currentTarget;
+    elemento.classList.add("clicked");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 200);
+  }
+</script>
+<body>
+<!-- partial:index.partial.html -->
+<div class="all">
+<div class="lefter" onclick="redirigir('Inicio.html')">
+  <div class="text">SCC</div>
+  
+</div>
+
+<div class="center">
+  <div class="explainer"><span>Welcome User</span></div>
+  <div class="text">Select an option</div>
+  </div>
+
+<div class="righter" onclick="redirigir('QUASAR.html')">
+  <div class="text">Q.U.A.S.A.R.</div>
+</div>
+</div>
+
+  
+</body>
+</html>

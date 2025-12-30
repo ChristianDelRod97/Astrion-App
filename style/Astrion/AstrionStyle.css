@@ -1,0 +1,38 @@
+/* Estilos específicos para index.html */
+.upload-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.upload-icon {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.file-info {
+    margin-top: 15px;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.upload-btn {
+    margin-top: 25px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

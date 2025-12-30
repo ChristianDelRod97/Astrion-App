@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JABIL - Astrion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/Astrion/AstrionMain.css">
+    <link rel="stylesheet" href="./style/Astrion/AstrionStyle.css">
+    <link rel="icon" href="./style/sources/Atrionicon.png">
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    
+</head>
+<body>
+  
+  
+
+  <div  class="LogoCompany"><img src="./style/sources/logo2.png" alt="LogoCompany" width="300px" >
+</div>
+
+
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="./style/sources/Atrionicon.png" alt="Astrion" class="logo-img" background="black">
+        </div>
+
+        <div class="header">
+            <h1 class="title">Welcome to Astrion </h1>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h2>Please upload your data</h2>
+                <p class="description">Select an Excel (.xlsx) file with demand data</p>
+
+                <div class="file-input-container">
+                    <label for="fileInput" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt"></i> Select file
+                    </label>
+                    <input type="file" id="fileInput" accept=".xls,.xlsx">
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" id="cargarBtn">
+                        <i class="fas fa-upload"></i> Load
+                    </button>
+                    <button class="btn" id="continuarBtn" disabled>
+                        <i class="fas fa-arrow-right"></i> Continue
+                    </button>
+                </div>
+
+                <p id="mensaje" class="file-info"></p>
+                <div id="resultados"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Astrion &copy; 2025</p>
+        </div>
+    </div>
+    <script src="./script/db.js"></script>
+    <script src="./script/astrion.js"></script>
+</body>
+</html>

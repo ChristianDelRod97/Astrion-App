@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUASAR - Results</title>
+
+    <!-- ICONOS Y ESTILOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/Q.U.A.S.A.R.-Style/resultado.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="./style/menu.css">
+    <link rel="icon" href="./style/sources/QuasarIcon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+    <div id="tooltip" class="tooltip"><div id="tooltip-content"></div></div>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">
+                        <img src="./style/sources/logo2.png" alt="" class="logo-img-small" width="100%">
+                    </span>
+                    <span class="profession">QUASAR</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <ul class="menu-links">
+
+                <li class="nav-link" id="quasarLink">
+                    <a href="QUASAR.html"><i class='bx bx-pie-chart-alt icon'></i><span class="text nav-text">QUASAR</span></a>
+                </li>
+                <li class="nav-link" id="SCCLink">
+                    <a href="Inicio.html"><i class='bx bx-bar-chart-alt-2 icon'></i><span class="text nav-text">SCC</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TITULO SUPERIOR -->
+    <section class="home">
+        <div class="text"><img src="./style/sources/logo2.png" alt="Logo" width="300px"></div>
+    </section>
+
+    <div class="logo-container">
+            <img src="./style/sources/LogoQUASAR.png" alt="QUASAR" class="logo-alt">
+    </div>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+
+        <!-- LOGO CENTRAL -->
+        
+
+        <div class="header">
+            <h1 class="title">Calculation Results</h1>
+        </div>
+
+        <div class="content">
+
+            <!-- GRAFICA + TABLAS RESUMEN -->
+            <div class="visual-container">
+
+                <div class="chart-container">
+                    <canvas id="grafica"></canvas>
+                </div>
+
+                <div class="new-tables-container">
+
+                    <!-- Resumen mensual -->
+                    <div class="summary-box">
+                        <div class="new-table-title">Data Summary Monthly</div>
+                        <table class="results-table">
+                            <tbody>
+                                <tr><td>Data Flux</td><td id="FluxData">-</td></tr>
+                                <tr><td>Data Welding</td><td id="WeldingData">-</td></tr>
+                                <tr><td id="nameCh1Label">Chemical 1 Data</td><td id="Chem1Data">-</td></tr>
+                                <tr><td id="nameCh2Label">Chemical 2 Data</td><td id="Chem2Data">-</td></tr>
+                                <tr><td id="nameCh3Label">Chemical 3 Data</td><td id="Chem3Data">-</td></tr>
+                                <tr><td id="nameCh4Label">Chemical 4 Data</td><td id="Chem4Data">-</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Resumen semanal -->
+                    <div class="summary-box">
+                        <div class="new-table-title">Weekly Chemical Usage</div>
+                        <table class="results-table-week">
+                            <thead>
+                                <tr><th>Chemical</th><th>Per Week</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Flux:</td><td id="FluxW1">-</td></tr>
+                                <tr><td>Welding:</td><td id="weldingW1">-</td></tr>
+                                <tr><td id="nameCh1LabelW">Chemical 1:</td><td id="Chem1W">-</td></tr>
+                                <tr><td id="nameCh2LabelW">Chemical 2:</td><td id="Chem2W">-</td></tr>
+                                <tr><td id="nameCh3LabelW">Chemical 3:</td><td id="Chem3W">-</td></tr>
+                                <tr><td id="nameCh4LabelW">Chemical 4:</td><td id="Chem4W">-</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TABLA TOP 10 -->
+            <div class="new-tables-container">
+                <div class="table-container">
+                    <div class="new-table-title">Top 10 Most Used Models per Month</div>
+                    <br>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Model</th>
+                                <th>Flux Utilization</th>
+                                <th>Welding Utilization</th>
+                                <th id="nameCh1Col">Chemical 1 Utilization</th>
+                                <th id="nameCh2Col">Chemical 2 Utilization</th>
+                                <th id="nameCh3Col">Chemical 3 Utilization</th>
+                                <th id="nameCh4Col">Chemical 4 Utilization</th>
+                            </tr>
+                        </thead>
+                        <tbody id="top10ModelsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="generarPDF"><i class="fas fa-download"></i> Download Report</button>
+                <button class="btn" id="regresarBtn"
+                onmouseover="showTooltipQuasar(event)"
+                onmouseout="hideTooltipQuasar()">
+                    <i class="fas fa-arrow-left"></i> Home</button>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Quantity Analysis & Solder AI Reporting &copy; 2025</p>
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./script/menu.js"></script>
+    <script src="./script/db.js"></script>
+    <script src="./script/quasarResultados.js"></script>
+
+</body>
+</html>

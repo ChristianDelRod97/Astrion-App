@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUASAR - Forms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/Q.U.A.S.A.R.-Style/base.css">
+    <link rel="stylesheet" href="./style/menu.css">
+    <link rel="stylesheet" href="./style/Q.U.A.S.A.R.-Style/formulario.css">
+    <link rel="icon" href="./style/sources/QuasarIcon.png">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+</head>
+<body>
+<nav class="sidebar close">
+    <header>
+      
+        <div class="text logo-text">
+          <span class="name">
+              <img src="./style/sources/logo2.png" alt="" class="logo-img-small" >
+          </span>
+        </div>
+        
+      
+    </header>
+        
+        
+</nav>
+    <section class="home">
+        <div class="text"><img src="./style/sources/logo2.png" alt="Logo" width="300px"></div>
+    </section>
+
+    <div class="container">
+        <div class="logo-container" style="background: #000000;">
+            <img src="./style/sources/LogoQUASAR.png" alt="QUASAR " class="logo-alt">
+        </div>
+        
+        <div class="header">
+            <h1 class="title">Additional Data</h1>
+        </div>
+        
+        <div class="content">
+            <div class="spinner-css">
+            <img src="./style/sources/girar.png" alt="Cargando..."">
+            </div>
+             <div class="status-text">
+                <p class="message" >Data successfully uploaded!</p>
+                <p class="description">Fill out the following information to continue</p>
+            </div>
+            <form id="dtAdicionales" class="form-container">
+                
+                <div class="form-group">
+
+                    <label for="Flux">Enter your Flux waste percentage</label>
+                    <input type="number" id="Flux" name="Flux" class="form-control" required>
+
+                    <label for="Solder">Enter your Solder waste percentage</label>
+                    <input type="number" id="Welding" name="Welding" class="form-control" required>
+
+                    <label  id="labelCh1Pct">Enter the name Chemical 1 </label>
+                    <input type="text" id="PctCh1" name="PctCh1" class="form-control" required>
+
+                   <div id="chemical1-section">
+                        <label id="chem1-label">Enter your Chemical 1 percentage</label>
+                        <input type="number" id="Chem1Pct" name="Chem1Pct" class="form-control" required>
+                    </div>
+
+                    <label >Unit Chemical 1</label>
+                    <div class="radio-group">
+                        <label for="radio-group">
+                            <input type="radio" name="Chem1Unit" value="1" required> g</label>
+                            <label type="radio-group">
+                            <input type="radio" name="Chem1Unit" value="2"> Gal</label>
+                            <label for="radio-group">
+                            <input type="radio" name="Chem1Unit" value="3"> Lb</label>
+                    </div>
+                    <label id="labelCh2Pct">Enter the name Chemical 2</label>
+                    <input type="text" id="PctCh2" name="PctCh2" class="form-control" required>
+
+                    <div id="chemical2-section">
+                        <label id="chem2-label"> Enter your Chemical 2 percentage</label>
+                        <input type="number" id="Chem2Pct" name="Chem2Pct" class="form-control" required>
+                    </div>
+
+                    <label>Unit Chemical 2</label>
+                    <div class="radio-group">
+                        <label for="radio-group">
+                            <input type="radio" name="Chem2Unit" value="1" required> g</label>
+                            <label type="radio-group">
+                            <input type="radio" name="Chem2Unit" value="2"> Gal</label>
+                            <label for="radio-group">
+                            <input type="radio" name="Chem2Unit" value="3"> Lb</label>
+                    </div>
+
+
+                    <label id="labelCh3Pct">Enter the name Chemical 3</label>
+                    <input type="text" id="PctCh3" name="PctCh3" class="form-control" required>
+
+                    <div id="chemical3-section">
+                        <label id="chem3-label"> Enter your Chemical 3 percentage</label>
+                        <input type="number" id="Chem3Pct" name="Chem3Pct" class="form-control" required >
+                    </div>
+
+                    <label>Unit Chemical 3</label>
+                     <div class="radio-group">
+                        <label for="radio-group">
+                            <input type="radio" name="Chem3Unit" value="1" required> g</label>
+                            <label type="radio-group">
+                            <input type="radio" name="Chem3Unit" value="2"> Gal</label>
+                            <label for="radio-group">
+                            <input type="radio" name="Chem3Unit" value="3"> Lb</label>
+                    </div>
+
+
+                    <label id="labelCh4Pct">Enter the name Chemical 4</label>
+                    <input type="text" id="PctCh4" name="PctCh4" class="form-control" required>
+
+                    <div id="chemical4-section">
+                        <label id="chem4-label"> Enter your Chemical 4 percentage</label>
+                        <input type="number" id="Chem4Pct" name="Chem4Pct" class="form-control" required>
+
+                    </div>
+                    <label>Unit Chemical 4</label>
+                   <div class="radio-group">
+                        <label for="radio-group">
+                            <input type="radio" name="Chem4Unit" value="1" required> g</label>
+                            <label type="radio-group">
+                            <input type="radio" name="Chem4Unit" value="2"> Gal</label>
+                            <label for="radio-group">
+                            <input type="radio" name="Chem4Unit" value="3"> Lb</label>
+                    </div>
+                
+                <div class="submit-btn">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start  
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <p>Quantity Analysis & Solder AI Reporting &copy; 2025</p>
+        </div>
+    </div>
+
+    <script src="./script/db.js"></script>
+    <script src="./script/quasar2.js"></script>
+    <script>
+            
+        function conectarCampo(nombreInputID, labelID, defaultText) {
+            const input = document.getElementById(nombreInputID);
+            const label = document.getElementById(labelID);
+
+            input.addEventListener("input", () => {
+                const name = input.value.trim();
+                label.textContent = name === "" ? defaultText : `Enter your ${name} percentage`;
+            });
+        }
+
+        conectarCampo("PctCh1", "chem1-label", "Enter your Chemical 1 percentage");
+        conectarCampo("PctCh2", "chem2-label", "Enter your Chemical 2 percentage");
+        conectarCampo("PctCh3", "chem3-label", "Enter your Chemical 3 percentage");
+        conectarCampo("PctCh4", "chem4-label", "Enter your Chemical 4 percentage");
+</script>
+
+
+    
+    
+</body>
+</html>
